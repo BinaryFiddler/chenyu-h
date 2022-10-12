@@ -1,34 +1,49 @@
-# Portfolio Starter Kit
+<p align="center">
+  <img alt="React Notion X" src="https://raw.githubusercontent.com/NotionX/react-notion-x/master/media/notion-ts.png" width="689">
+</p>
 
-This portfolio is built with **Next.js** and a library called [Nextra](https://nextra.vercel.app/). It allows you to write Markdown and focus on the _content_ of your portfolio. This starter includes:
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-- Automatically configured to handle Markdown/MDX
-- Generates an RSS feed based on your posts
-- A beautiful theme included out of the box
-- Easily categorize posts with tags
-- Fast, optimized web font loading
+## Intro
 
-## Configuration
+This is a more full-featured Next.js example project using `react-notion-x`, with the most important code in [`pages/[pageId].tsx`](./examples/full/pages/%5BpageId%5D.tsx) and [`components/NotionPage.tsx`](./components/NotionPage.tsx). You can view this example [live on Vercel](https://react-notion-x-demo.transitivebullsh.it).
 
-1. Update your name in `theme.config.js` or change the footer.
-1. Update your name and site URL for the RSS feed in `scripts/gen-rss.js`.
-1. Update the meta tags in `pages/_document.js`.
-1. Update the posts inside `pages/posts/*.md` with your own content.
+Config can be found in [`lib/config.ts`](./lib/config.ts)
 
-## Deploy your own
+This demo adds a few nice features:
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+- Uses [next/image](https://nextjs.org/docs/api-reference/next/image) to serve optimal images
+- Uses preview images generated using [lqip-modern](https://github.com/transitive-bullshit/lqip-modern)
+- Includes larger optional components via [next/dynamic](https://nextjs.org/docs/advanced-features/dynamic-import)
+  - Collection, CollectionRow
+  - Code
+  - Equation
+  - Pdf
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/nextjs-portfolio-starter&project-name=portfolio&repository-name=portfolio)
+## Getting Started
 
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+First, run the development server:
 
 ```bash
-npx create-next-app --example blog my-blog
+npm run dev
 # or
-yarn create next-app --example blog my-blog
+yarn dev
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+
+## Preview Images
+
+This demo uses [next/image](https://nextjs.org/docs/api-reference/next/image) as a custom image component. It also generates preview images at page build time using [lqip-modern](https://github.com/transitive-bullshit/lqip-modern).
+
+Note that preview image generation can be very slow, so it's recommended that you either cache the results in a key-value database or disable it by setting `previewImagesEnabled` to `false` in [`lib/config.ts`](./lib/config.ts)
+
+Note that custom images will only be enabled if either the image has a valid preview image defined for its URL, or if you set `forceCustomImages` to `true`.
+
+## License
+
+MIT © [Travis Fischer](https://transitivebullsh.it)
+
+Support my OSS work by <a href="https://twitter.com/transitive_bs">following me on twitter <img src="https://storage.googleapis.com/saasify-assets/twitter-logo.svg" alt="twitter" height="24px" align="center"></a>
