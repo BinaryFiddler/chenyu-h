@@ -2,7 +2,7 @@ import * as React from 'react'
 import cs from 'classnames'
 import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
 import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
-import { Breadcrumbs, Search, useNotionContext } from 'react-notion-x'
+import { Breadcrumbs, useNotionContext } from 'react-notion-x'
 import * as types from 'notion-types'
 import useDarkModeImpl from '@fisch0920/use-dark-mode'
 import styles from './styles.module.css'
@@ -32,7 +32,7 @@ const ToggleThemeButton = () => {
 
     return (
         <div
-            className={cs('breadcrumb', 'button', !hasMounted && styles.hidden)}
+            className={cs('breadcrumb', 'button', !hasMounted)}
             onClick={onToggleTheme}
         >
             {hasMounted && isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />}
@@ -64,7 +64,8 @@ export const NotionPageHeader: React.FC<{ block: types.CollectionViewPageBlock |
                         .filter(Boolean)}
 
                     <ToggleThemeButton />
-                    <Search block={block} title={null} />
+                    {/* TODO: figure out why search button is not working */}
+                    {/* <Search block={block} /> */}
                 </div>
             </div>
         </header>

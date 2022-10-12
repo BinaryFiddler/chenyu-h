@@ -22,14 +22,15 @@ export const isDev =
 
 export const port = process.env.PORT || 3000
 export const rootDomain = isDev ? `localhost:${port}` : null
+export const author = 'Chenyu'
 export const navigationLinks = [
   {
     title: 'Now',
     pageId: 'a4a2367340314a7f80a19d1e12fc90b1'
   },
   {
-    title: 'About',
-    pageId: 'c7923d588bc94f68bbb9931e1e66f8af'
+    title: 'Blog',
+    pageId: '51005d1e2d1b447caa38fde39ee83522'
   },
   {
     title: 'Hobbies',

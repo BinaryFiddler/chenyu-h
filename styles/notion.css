@@ -1,3 +1,14 @@
-.notion-column .notion-block-ffcd2047b1e54ec2810256a6900e29ff {
-    text-align: center;
+.notion-header .notion-nav-header {
+    font-size: large;
 }
+
+/* Blog page */
+.notion-block-51005d1e2d1b447caa38fde39ee83522 .notion-page-icon-hero span {
+    border-radius: 50%;
+}
+
+/* About page */
+
+/* Now page */
+
+/* Hobbies page */
